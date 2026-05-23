@@ -1640,3 +1640,26 @@ h3, .h3 {
   line-height: 1.45;
   font-weight: 300;
 }
+
+/* Page head with image variant (About) */
+.page-head__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+}
+
+@media (min-width: 880px) {
+  .page-head__grid {
+    grid-template-columns: 6fr 5fr;
+    gap: clamp(3rem, 5vw, 4.5rem);
+  }
+}
+
+.page-head__image {
+  width: 100%;
+}
+
+.page-head--with-image .page-head__title {
+  max-width: none;
+}
