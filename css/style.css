@@ -888,6 +888,17 @@ h3, .h3 {
   .editorial-grid > :first-child img { height: 100%; }
 }
 
+/* Symmetric 2-up pair (equal weight) */
+.group-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+@media (min-width: 760px) {
+  .group-pair { grid-template-columns: 1fr 1fr; }
+}
+
 /* 2-up editorial grid (one wide, one tall) */
 .editorial-2up {
   display: grid;
