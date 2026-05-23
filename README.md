@@ -83,25 +83,21 @@ color/spacing changes are one-line edits.
 
 ## ⚠️ Things to verify before launch
 
-### 1. Team photo → name mapping (please double-check)
+### 1. Team photo → name mapping (please verify the inferred ones)
 
-The compaction summary needed to guess which uploaded photo belongs to which
-team member. Current mapping in `about.html`:
+Team photo assignments (corrected per Jess's feedback May 23):
 
-| Slot | File | Currently labeled | Source photo |
-|------|------|-------------------|--------------|
-| 1 | `images/team/team-1.jpg` | Jess Mansell, LPC-MHSP | `Anomaly_Photos_14` (cream cardigan, septum piercing) |
-| 2 | `images/team/team-2.jpg` | Ashley Wellander | `Anomaly_Photos_1` (black blazer, gold chain) |
-| 3 | `images/team/team-3.jpg` | Cayce Smith | `Anomaly_Photos_28` (black ribbed top) |
-| 4 | `images/team/team-4.jpg` | Jillee Walter | `Anomaly_Photos_21` (beige blazer) |
-| 5 | *(monogram placeholder)* | Paige Ring | none provided |
+| Slot | File | Person | Confidence |
+|------|------|--------|------------|
+| 1 | `images/team/team-1.jpg` | Jess Mansell, LPC-MHSP (Founder) | ✓ confirmed by Jess |
+| 2 | `images/team/team-2.jpg` | Ashley Wellander | inferred by elimination |
+| 3 | `images/team/team-3.jpg` | Cayce Smith | ✓ confirmed by Jess |
+| 4 | `images/team/team-4.jpg` | Jillee Walter | assumed unchanged |
+| 5 | *(monogram placeholder)* | Paige Ring | photo not provided |
 
-**Please confirm these are correct.** If any need to swap, the fastest fix
-is renaming the files in `images/team/` — the HTML references the slot
-numbers, not the names. To replace Paige's monogram placeholder with a real
-photo, drop the file in `images/team/team-5.jpg` and ask Claude Code to
-swap the monogram block in `about.html` for an image block matching the
-others.
+**Please confirm slots 2 and 4 explicitly.** Photo 2 is the woman in the dark blazer with gold chain necklace; photo 4 is the older woman in the beige/light blazer. If either is wrong, swap the file names in `images/team/` — the HTML references slot numbers, not names.
+
+To replace Paige's monogram placeholder with a real photo, drop the file in `images/team/team-5.jpg` and ask Claude Code to swap the monogram block in `about.html` for an image block matching the others.
 
 ### 2. Fonts (Recoleta substitution)
 
