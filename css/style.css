@@ -632,7 +632,7 @@ h3, .h3 {
   overflow: hidden;
   background: var(--graphite);
   color: var(--bone);
-  min-height: clamp(640px, 88vh, 920px);
+  min-height: clamp(720px, 96vh, 1040px);
   isolation: isolate;
 }
 
@@ -642,7 +642,7 @@ h3, .h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 22% center;
+  object-position: center 78%;
   z-index: 0;
 }
 
@@ -652,7 +652,7 @@ h3, .h3 {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(105deg, rgba(31, 38, 33, 0.05) 36%, rgba(20, 26, 22, 0.62) 78%, rgba(20, 26, 22, 0.72) 100%);
+  background: linear-gradient(180deg, rgba(20, 26, 22, 0.58) 0%, rgba(20, 26, 22, 0.32) 28%, rgba(20, 26, 22, 0.05) 58%, transparent 78%);
 }
 
 .hero--image .hero__container {
@@ -660,9 +660,9 @@ h3, .h3 {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(3rem, 8vw, 6rem);
-  min-height: clamp(640px, 88vh, 920px);
+  justify-content: flex-start;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  min-height: clamp(720px, 96vh, 1040px);
   padding-block: clamp(2rem, 5vw, 4rem);
 }
 
@@ -675,8 +675,8 @@ h3, .h3 {
 }
 
 .hero__overlay {
-  max-width: 560px;
-  margin-left: auto;
+  max-width: 720px;
+  margin-left: 0;
   text-align: left;
 }
 
@@ -714,17 +714,16 @@ h3, .h3 {
 
 @media (max-width: 760px) {
   .hero--image {
-    min-height: 86vh;
+    min-height: 92vh;
   }
   .hero__bg {
-    object-position: 38% center;
+    object-position: center 82%;
   }
   .hero--image::after {
-    background: linear-gradient(180deg, rgba(20,26,22,0.15) 0%, rgba(20,26,22,0.45) 55%, rgba(20,26,22,0.78) 100%);
+    background: linear-gradient(180deg, rgba(20,26,22,0.55) 0%, rgba(20,26,22,0.25) 35%, transparent 70%);
   }
   .hero__overlay {
     max-width: none;
-    margin-left: 0;
   }
 }
 
