@@ -12,11 +12,13 @@
   <meta property="og:description" content="Psychological refinement for ambitious humans. Private therapy for public-facing lives. Nashville, TN." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.anomalytherapy.com/" />
-  <meta property="og:image" content="/images/team/group.jpg" />
+  <meta property="og:image" content="/images/team/team-green-wall.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="preload" as="image" href="/images/team/team-green-wall.jpg" fetchpriority="high" />
 
   <link rel="stylesheet" href="/css/style.css" />
 </head>
@@ -130,52 +132,51 @@
 
   <main>
 
-    <!-- HERO: Typography-led, no big photo -->
-    <section class="hero">
-      <div class="container">
+    <!-- HERO: Team photo with copy overlaid on the green wall -->
+    <section class="hero hero--image">
+      <img class="hero__bg" src="/images/team/team-green-wall.jpg" alt="The Anomaly Therapy team standing in front of the office's deep-green brick wall in Nashville." fetchpriority="high" />
+
+      <div class="container hero__container">
         <div class="hero__index reveal">
           <span class="hero__meta">01 — Welcome</span>
           <span class="hero__meta">Nashville · Tennessee</span>
         </div>
 
-        <p class="eyebrow reveal" data-delay="1">Therapy &amp; Consultancy</p>
-
-        <div class="hero__lead">
-          <h1 class="display reveal" data-delay="2" style="margin-top: 1rem;">
+        <div class="hero__overlay">
+          <p class="eyebrow reveal" data-delay="1">Therapy &amp; Consultancy</p>
+          <h1 class="display reveal" data-delay="2">
             Therapy for<br />
             people who<br />
             <em>carry a lot.</em>
           </h1>
 
-          <aside class="hero__accent reveal" data-delay="3">
-            <div class="frame frame--portrait">
-              <img src="/images/lifestyle/feet-on-rug.jpg" alt="A close detail of feet resting on a textured rug inside the office." />
-            </div>
-            <p class="hero__accent-caption">No. 01 — On Patterson Street.</p>
-          </aside>
+          <div class="hero__cta-row reveal" data-delay="3">
+            <a href="https://anomalytherapy.sessionshealth.com" class="btn btn--bone" target="_blank" rel="noopener">Request an Appointment</a>
+            <a href="/services.html" class="tlink tlink--bone">Explore Services →</a>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="hero__footer">
-          <div class="hero__pillar reveal" data-delay="3">
+    <!-- Intro pillars: quick preview of three offerings -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="hero__footer hero__footer--standalone">
+          <div class="hero__pillar reveal">
             <span class="hero__pillar-num">i.</span>
             <p class="hero__pillar-title">Traditional Therapy</p>
             <p class="hero__pillar-text">Individuals and couples — built for ambition, visibility, and complexity.</p>
           </div>
-          <div class="hero__pillar reveal" data-delay="4">
+          <div class="hero__pillar reveal" data-delay="1">
             <span class="hero__pillar-num">ii.</span>
             <p class="hero__pillar-title">Accessible Care</p>
             <p class="hero__pillar-text">Intern-led therapy from $85, sliding to $30 by income.</p>
           </div>
-          <div class="hero__pillar reveal" data-delay="5">
+          <div class="hero__pillar reveal" data-delay="2">
             <span class="hero__pillar-num">iii.</span>
             <p class="hero__pillar-title">Workplace Wellness</p>
             <p class="hero__pillar-text">Consulting and team support for performance that holds.</p>
           </div>
-        </div>
-
-        <div style="margin-top: clamp(2.5rem, 4vw, 3.5rem); display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-          <a href="https://anomalytherapy.sessionshealth.com" class="btn" target="_blank" rel="noopener">Request an Appointment</a>
-          <a href="/services.html" class="tlink">Explore Services</a>
         </div>
       </div>
     </section>
