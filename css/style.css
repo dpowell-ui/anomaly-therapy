@@ -681,13 +681,15 @@ h3, .h3 {
 }
 
 .hero__overlay .eyebrow {
-  color: var(--bronze);
+  color: rgba(245, 241, 234, 0.88);
   margin-bottom: 1rem;
 }
 
 .hero__overlay .display,
 .hero__overlay .display em {
   color: var(--bone);
+  font-size: clamp(2rem, 5vw, 4.25rem);
+  line-height: 1.05;
 }
 
 .hero__cta-row {
