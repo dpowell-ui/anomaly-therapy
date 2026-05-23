@@ -184,10 +184,83 @@
       </div>
     </section>
 
-    <!-- STUDIO -->
-    <section class="section section--stone">
-      <span class="section__index">02 · The Studio</span>
+    <!-- SEND A MESSAGE -->
+    <section class="section section--stone" id="message">
+      <span class="section__index">02 · Send a message</span>
       <span class="section__page">PAGE 03</span>
+
+      <div class="container">
+        <div class="split">
+          <div class="reveal">
+            <p class="eyebrow mb-2">General inquiries</p>
+            <h2 class="display italic" style="font-size: clamp(1.875rem, 3.6vw, 2.75rem);">
+              For everything<br />that isn't an appointment.
+            </h2>
+            <p class="body" style="margin-top: 1.5rem; color: var(--moss);">
+              Media, workplace engagements, supervision, partnerships, or general questions. We respond personally within forty-eight hours.
+            </p>
+            <p class="fine" style="margin-top: 1.5rem;">
+              For appointment requests, please use the <a href="https://anomalytherapy.sessionshealth.com" target="_blank" rel="noopener" class="tlink" style="font-size: 0.6875rem;">client portal</a>.
+            </p>
+          </div>
+
+          <div class="reveal" data-delay="1">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              class="contact-form"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="contact-form__hp">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <div class="contact-form__row">
+                <label class="contact-form__field">
+                  <span class="contact-form__label">Name</span>
+                  <input type="text" name="name" required autocomplete="name" />
+                </label>
+                <label class="contact-form__field">
+                  <span class="contact-form__label">Email</span>
+                  <input type="email" name="email" required autocomplete="email" />
+                </label>
+              </div>
+
+              <label class="contact-form__field">
+                <span class="contact-form__label">Organization <em class="contact-form__opt">(optional)</em></span>
+                <input type="text" name="organization" autocomplete="organization" />
+              </label>
+
+              <label class="contact-form__field">
+                <span class="contact-form__label">Reason for reaching out</span>
+                <select name="reason">
+                  <option value="General inquiry">General inquiry</option>
+                  <option value="Workplace wellness">Workplace wellness engagement</option>
+                  <option value="Media / press">Media or press</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+
+              <label class="contact-form__field">
+                <span class="contact-form__label">Message</span>
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+
+              <button type="submit" class="btn">Send message</button>
+              <p class="fine" style="margin-top: 1rem;">Not for clinical emergencies. If you are in crisis, call or text 988.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIO -->
+    <section class="section">
+      <span class="section__index">03 · The Studio</span>
+      <span class="section__page">PAGE 04</span>
 
       <div class="container">
         <div class="split">
@@ -220,6 +293,15 @@
             </div>
             <p class="fine" style="margin-top: 1rem; text-align: right;">— The Patterson Street office</p>
           </div>
+        </div>
+
+        <div class="map-embed reveal" data-delay="2" style="margin-top: clamp(2.5rem, 4vw, 3.5rem);">
+          <iframe
+            title="Map showing 1916 Patterson Street, Suite 202, Nashville TN"
+            src="https://maps.google.com/maps?q=1916+Patterson+Street+Nashville+TN+37203&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </section>
