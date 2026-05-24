@@ -1283,6 +1283,26 @@ h3, .h3 {
 
 .contact-info a:hover { color: var(--bronze); }
 
+/* ---------- 13b · SERVICE ASIDE (integrated image in service split) ---------- */
+.service-aside {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  max-width: 460px;
+}
+
+.service-aside .frame {
+  background: var(--stone-soft);
+}
+
+.service-aside__caption {
+  font-family: var(--sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--moss);
+  font-weight: 500;
+  margin-top: 0.875rem;
+}
+
 /* ---------- 14a · SPECIALTY CARDS ---------- */
 .specialty-list {
   display: grid;
