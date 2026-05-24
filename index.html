@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <link rel="preload" as="image" href="/images/team/team-laughing.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/team/hero.jpg" fetchpriority="high" />
 
   <link rel="stylesheet" href="/css/style.css" />
 </head>
@@ -130,34 +130,30 @@
 
   <main>
 
-    <!-- HERO: editorial split — text + team portrait -->
-    <section class="hero hero--split">
-      <div class="hero__panel hero__panel--text">
-        <div class="hero__index">
+    <!-- HERO PHOTO: Full-bleed team -->
+    <section class="hero-photo" aria-label="The Anomaly Therapy team">
+      <img src="/images/team/hero.jpg" alt="The Anomaly Therapy team standing together in front of the office wall in Nashville." fetchpriority="high" />
+      <p class="hero-photo__caption">The Team · Anomaly Therapy <span>Nashville · Tennessee</span></p>
+    </section>
+
+    <!-- HERO STATEMENT: Centered typographic punch -->
+    <section class="hero hero--centered">
+      <div class="container container--narrow">
+        <div class="hero__index reveal">
           <span class="hero__meta">01 — Welcome</span>
-          <span class="hero__meta">Nashville · Tennessee</span>
+          <span class="hero__meta">Volume 02 · MMXXVI</span>
         </div>
-
-        <div class="hero__inner">
-          <p class="eyebrow reveal">Therapy &amp; Consultancy</p>
-          <h1 class="display reveal" data-delay="1">
-            Therapy for<br />
-            people who<br />
-            <em>carry a lot.</em>
-          </h1>
-          <p class="hero__lede reveal" data-delay="2">
-            A boutique practice in Nashville for high-performers, founders, creatives, and the partners they love.
-          </p>
-          <div class="hero__cta-row reveal" data-delay="3">
-            <a href="https://anomalytherapy.sessionshealth.com" class="btn" target="_blank" rel="noopener">Request an Appointment</a>
-            <a href="/services.html" class="tlink">Explore Services →</a>
-          </div>
+        <p class="hero__eyebrow reveal" data-delay="1">Therapy &amp; Consultancy · Nashville</p>
+        <h1 class="hero__statement reveal" data-delay="2">
+          Therapy for people who <em>carry&nbsp;a&nbsp;lot.</em>
+        </h1>
+        <p class="hero__sub reveal" data-delay="3">
+          Private therapy and workplace consultancy for high-performing adults — couples, founders, creatives, executives — and the partners who hold them together.
+        </p>
+        <div class="hero__ctas reveal" data-delay="4">
+          <a href="https://anomalytherapy.sessionshealth.com" class="btn" target="_blank" rel="noopener">Request an Appointment</a>
+          <a href="/services.html" class="tlink">Explore Services →</a>
         </div>
-      </div>
-
-      <div class="hero__panel hero__panel--image">
-        <img src="/images/team/team-laughing.jpg" alt="The Anomaly Therapy team laughing together on a leather couch in the office lounge." fetchpriority="high" />
-        <p class="hero__caption">No. 01 — The Team, Patterson Street</p>
       </div>
     </section>
 
