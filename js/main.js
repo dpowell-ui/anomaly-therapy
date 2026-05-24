@@ -103,6 +103,39 @@
     revealEls.forEach((el) => { el.dataset.visible = 'true'; });
   }
 
+  /* ---------- Team card hover-cycle ----------
+     Cards with multiple stacked photos cycle through them on hover */
+  document.querySelectorAll('.member[data-photos]').forEach((card) => {
+    const imgs = card.querySelectorAll('.member__photo img');
+    if (imgs.length < 2) return;
+
+    imgs[0].classList.add('is-current');
+    let idx = 0;
+    let timer = null;
+
+    const advance = () => {
+      imgs[idx].classList.remove('is-current');
+      idx = (idx + 1) % imgs.length;
+      imgs[idx].classList.add('is-current');
+    };
+
+    const reset = () => {
+      if (timer) { clearInterval(timer); timer = null; }
+      imgs[idx].classList.remove('is-current');
+      idx = 0;
+      imgs[idx].classList.add('is-current');
+    };
+
+    card.addEventListener('mouseenter', () => {
+      if (timer) return;
+      advance();
+      timer = setInterval(advance, 1400);
+    });
+
+    card.addEventListener('mouseleave', reset);
+    card.addEventListener('focusout', reset);
+  });
+
   /* ---------- Mark current nav ---------- */
   const path = window.location.pathname.replace(/\/$/, '') || '/';
   document.querySelectorAll('[data-nav-path]').forEach((a) => {

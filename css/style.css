@@ -1056,17 +1056,35 @@ h3, .h3 {
   aspect-ratio: 4 / 5;
   background: var(--stone);
   overflow: hidden;
+  position: relative;
 }
 
 .member__photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
   filter: saturate(0.95);
-  transition: transform 1.2s var(--ease), filter var(--med) var(--ease);
+  transition: opacity 0.7s var(--ease), filter var(--med) var(--ease);
 }
 
-.member:hover .member__photo img {
+.member__photo img:first-child,
+.member__photo img.is-current {
+  opacity: 1;
+}
+
+.member:hover .member__photo img.is-current {
+  filter: saturate(1);
+}
+
+/* Single-photo cards: maintain the previous gentle hover zoom */
+.member:not([data-photos]) .member__photo img {
+  transition: opacity 0.7s var(--ease), filter var(--med) var(--ease), transform 1.2s var(--ease);
+}
+
+.member:not([data-photos]):hover .member__photo img {
   transform: scale(1.04);
   filter: saturate(1);
 }
