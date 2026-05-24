@@ -625,61 +625,80 @@ h3, .h3 {
   position: relative;
 }
 
-/* Full-bleed hero photo banner */
-.hero-photo {
+/* Editorial masthead — photo plate + typographic statement in one composition */
+.hero-masthead {
+  background: var(--bone);
+  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(4rem, 7vw, 5.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   position: relative;
-  width: 100%;
-  height: clamp(460px, 72vh, 820px);
-  overflow: hidden;
-  background: var(--graphite);
-  isolation: isolate;
 }
 
-.hero-photo img {
+.hero-masthead__index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--moss);
+  gap: 1.5rem;
+}
+
+.hero-masthead__photo {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 48vh, 560px);
+  margin: 0;
+  overflow: hidden;
+  background: var(--graphite);
+}
+
+.hero-masthead__photo img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 38%;
 }
 
-.hero-photo::after {
+.hero-masthead__photo::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent 55%, rgba(20, 26, 22, 0.55) 100%);
+  background: linear-gradient(180deg, transparent 58%, rgba(20, 26, 22, 0.55) 100%);
 }
 
-.hero-photo__caption {
+.hero-masthead__caption {
   position: absolute;
-  left: clamp(1.5rem, 4vw, 3.5rem);
-  right: clamp(1.5rem, 4vw, 3.5rem);
-  bottom: clamp(1.5rem, 3vw, 2.25rem);
+  bottom: clamp(1rem, 2vw, 1.5rem);
+  left: clamp(1.25rem, 2.5vw, 2rem);
+  right: clamp(1.25rem, 2.5vw, 2rem);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1.5rem;
   font-family: var(--sans);
   font-size: 0.6875rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--bone);
   font-weight: 500;
+  gap: 1.5rem;
   z-index: 1;
+  margin: 0;
 }
 
-.hero-photo__caption span {
-  color: rgba(245, 241, 234, 0.7);
+.hero-masthead__caption span:last-child {
+  color: rgba(245, 241, 234, 0.75);
 }
 
-/* Centered typographic hero statement */
-.hero--centered {
+.hero-masthead__statement {
   text-align: center;
-  padding-top: clamp(4rem, 8vw, 7rem);
-  padding-bottom: clamp(4rem, 7vw, 6rem);
+  margin: clamp(0.5rem, 1.5vw, 1rem) auto 0;
 }
-.hero--centered .hero__index { max-width: 720px; margin-inline: auto; }
 
 .hero__eyebrow {
   font-family: var(--sans);
