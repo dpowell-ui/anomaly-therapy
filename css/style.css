@@ -655,7 +655,7 @@ h3, .h3 {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(20, 26, 22, 0.55) 0%, rgba(20, 26, 22, 0.25) 28%, rgba(20, 26, 22, 0.08) 50%, transparent 72%);
+  background: linear-gradient(180deg, rgba(15, 20, 17, 0.68) 0%, rgba(15, 20, 17, 0.55) 30%, rgba(15, 20, 17, 0.4) 50%, rgba(15, 20, 17, 0.18) 75%, rgba(15, 20, 17, 0.05) 92%);
 }
 
 .hero--overlay .hero__index {
@@ -681,12 +681,14 @@ h3, .h3 {
 }
 
 .hero--overlay .hero__eyebrow {
-  color: rgba(245, 241, 234, 0.88);
+  color: rgba(245, 241, 234, 0.95);
+  text-shadow: 0 1px 16px rgba(15, 20, 17, 0.55);
 }
 
 .hero--overlay .hero__statement {
   color: var(--bone);
   font-size: clamp(2.25rem, 6vw, 5rem);
+  text-shadow: 0 2px 24px rgba(15, 20, 17, 0.5);
 }
 
 .hero--overlay .hero__statement em {
@@ -694,7 +696,9 @@ h3, .h3 {
 }
 
 .hero--overlay .hero__sub {
-  color: rgba(245, 241, 234, 0.82);
+  color: var(--bone);
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  text-shadow: 0 1px 16px rgba(15, 20, 17, 0.6);
 }
 
 .hero--overlay .btn {
