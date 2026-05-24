@@ -625,79 +625,119 @@ h3, .h3 {
   position: relative;
 }
 
-/* Editorial masthead — photo plate + typographic statement in one composition */
-.hero-masthead {
-  background: var(--bone);
-  padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(4rem, 7vw, 5.5rem);
+/* Single full-bleed hero with text overlay */
+.hero--overlay {
+  position: relative;
+  padding: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 4vw, 3.5rem) clamp(2.5rem, 4vw, 3.5rem);
+  min-height: clamp(640px, 96vh, 1000px);
+  background: var(--graphite);
+  color: var(--bone);
+  overflow: hidden;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  position: relative;
+  text-align: center;
 }
 
-.hero-masthead__index {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: var(--sans);
-  font-size: 0.6875rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--moss);
-  gap: 1.5rem;
-}
-
-.hero-masthead__photo {
-  position: relative;
-  width: 100%;
-  height: clamp(320px, 48vh, 560px);
-  margin: 0;
-  overflow: hidden;
-  background: var(--graphite);
-}
-
-.hero-masthead__photo img {
-  display: block;
+.hero__bg {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center bottom;
+  z-index: 0;
 }
 
-.hero-masthead__photo::after {
+.hero--overlay::after {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent 58%, rgba(20, 26, 22, 0.55) 100%);
+  background: linear-gradient(180deg, rgba(20, 26, 22, 0.55) 0%, rgba(20, 26, 22, 0.25) 28%, rgba(20, 26, 22, 0.08) 50%, transparent 72%);
 }
 
-.hero-masthead__caption {
-  position: absolute;
-  bottom: clamp(1rem, 2vw, 1.5rem);
-  left: clamp(1.25rem, 2.5vw, 2rem);
-  right: clamp(1.25rem, 2.5vw, 2rem);
+.hero--overlay .hero__index {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  margin: 0;
   font-family: var(--sans);
   font-size: 0.6875rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--bone);
-  font-weight: 500;
+  color: rgba(245, 241, 234, 0.82);
   gap: 1.5rem;
-  z-index: 1;
-  margin: 0;
 }
 
-.hero-masthead__caption span:last-child {
+.hero__content {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: auto;
+}
+
+.hero--overlay .hero__eyebrow {
+  color: rgba(245, 241, 234, 0.88);
+}
+
+.hero--overlay .hero__statement {
+  color: var(--bone);
+  font-size: clamp(2.25rem, 6vw, 5rem);
+}
+
+.hero--overlay .hero__statement em {
+  color: var(--bone);
+}
+
+.hero--overlay .hero__sub {
+  color: rgba(245, 241, 234, 0.82);
+}
+
+.hero--overlay .btn {
+  background: var(--bone);
+  color: var(--graphite);
+  border-color: var(--bone);
+}
+
+.hero--overlay .btn:hover {
+  background: transparent;
+  color: var(--bone);
+  border-color: var(--bone);
+}
+
+.hero--overlay .tlink {
+  color: var(--bone);
+}
+
+.hero--overlay .tlink:hover {
+  color: var(--bronze);
+}
+
+.hero__caption {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
   color: rgba(245, 241, 234, 0.75);
+  gap: 1.5rem;
+  font-weight: 500;
 }
 
-.hero-masthead__statement {
-  text-align: center;
-  margin: clamp(0.5rem, 1.5vw, 1rem) auto 0;
+@media (max-width: 640px) {
+  .hero__caption {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
 }
 
 .hero__eyebrow {

@@ -130,22 +130,16 @@
 
   <main>
 
-    <!-- HERO: editorial masthead — photo plate + typographic statement, one composition -->
-    <section class="hero-masthead" aria-label="Welcome to Anomaly Therapy">
-      <div class="hero-masthead__index">
+    <!-- HERO: single full-bleed photo with text overlay -->
+    <section class="hero hero--overlay" aria-label="Welcome to Anomaly Therapy">
+      <img class="hero__bg" src="/images/team/hero.jpg" alt="The Anomaly Therapy team standing together in front of the office wall in Nashville." fetchpriority="high" />
+
+      <div class="hero__index">
         <span class="hero__meta">01 — Welcome</span>
         <span class="hero__meta">Volume 02 · MMXXVI</span>
       </div>
 
-      <figure class="hero-masthead__photo">
-        <img src="/images/team/hero.jpg" alt="The Anomaly Therapy team standing together in front of the office wall in Nashville." fetchpriority="high" />
-        <figcaption class="hero-masthead__caption">
-          <span>The Team · Anomaly Therapy</span>
-          <span>Nashville · Tennessee</span>
-        </figcaption>
-      </figure>
-
-      <div class="hero-masthead__statement container container--narrow">
+      <div class="hero__content container container--narrow">
         <p class="hero__eyebrow reveal">Therapy &amp; Consultancy · Nashville</p>
         <h1 class="hero__statement reveal" data-delay="1">
           Therapy for people who <em>carry&nbsp;a&nbsp;lot.</em>
@@ -158,6 +152,11 @@
           <a href="/services.html" class="tlink">Explore Services →</a>
         </div>
       </div>
+
+      <p class="hero__caption">
+        <span>The Team · Anomaly Therapy</span>
+        <span>Nashville · Tennessee</span>
+      </p>
     </section>
 
     <!-- Intro pillars: quick preview of three offerings -->
