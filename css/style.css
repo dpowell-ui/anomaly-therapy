@@ -1045,8 +1045,12 @@ h3, .h3 {
 /* ---------- 11 · TEAM ---------- */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+@media (min-width: 720px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .member { display: block; }
