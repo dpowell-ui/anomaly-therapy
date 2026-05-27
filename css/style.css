@@ -1775,3 +1775,91 @@ h3, .h3 {
 .page-head--with-image .page-head__title {
   max-width: none;
 }
+
+/* Application form */
+.app-form { max-width: 720px; margin-inline: auto; }
+
+.app-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 2vw, 1.5rem);
+  margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+}
+@media (min-width: 600px) {
+  .app-form__row { grid-template-columns: 1fr 1fr; }
+}
+
+.app-form__field { display: block; margin-bottom: clamp(1.25rem, 2vw, 1.5rem); }
+.app-form__row .app-form__field { margin-bottom: 0; }
+
+.app-form__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 0.5rem;
+}
+
+.app-form input[type="text"],
+.app-form input[type="email"],
+.app-form input[type="tel"],
+.app-form input[type="url"],
+.app-form input[type="month"],
+.app-form select {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  color: var(--graphite);
+  background: var(--bone);
+  border: 0;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.25);
+  padding: 0.75rem 0;
+  font-weight: 300;
+  transition: border-color 180ms ease;
+  border-radius: 0;
+}
+
+.app-form textarea {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  color: var(--graphite);
+  background: var(--bone);
+  border: 1px solid rgba(42, 42, 42, 0.2);
+  padding: 1rem;
+  resize: vertical;
+  min-height: 140px;
+  font-weight: 300;
+  transition: border-color 180ms ease;
+}
+
+.app-form input:focus,
+.app-form select:focus,
+.app-form textarea:focus {
+  outline: none;
+  border-color: var(--olive);
+}
+
+.app-form input[type="file"] {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--graphite);
+  padding: 0.5rem 0;
+}
+
+.app-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236F756B'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  padding-right: 2rem;
+}
+
+.app-form input::placeholder,
+.app-form textarea::placeholder {
+  color: rgba(111, 117, 107, 0.6);
+  font-style: italic;
+}
