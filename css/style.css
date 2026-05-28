@@ -850,7 +850,7 @@ h3, .h3 {
   display: flex;
   flex-wrap: wrap;
   gap: clamp(2rem, 5vw, 4rem);
-  align-items: flex-end;
+  align-items: flex-start;
   padding-top: clamp(2rem, 4vw, 3rem);
   margin-top: clamp(3rem, 5vw, 4rem);
   border-top: 1px solid rgba(42, 42, 42, 0.12);
