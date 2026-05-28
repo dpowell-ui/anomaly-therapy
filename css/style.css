@@ -1502,6 +1502,7 @@ h3, .h3 {
 }
 
 .footer__list { display: flex; flex-direction: column; gap: 0.7rem; }
+.footer__list li.nowrap { white-space: nowrap; }
 
 .footer__list a {
   font-family: var(--sans);
