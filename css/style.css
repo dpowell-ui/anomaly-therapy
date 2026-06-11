@@ -457,6 +457,15 @@ h3, .h3 {
 
 .header__cta:hover { background: var(--olive); border-color: var(--olive); }
 
+.header__ig {
+  display: inline-flex;
+  align-items: center;
+  color: var(--graphite);
+  transition: color var(--fast) var(--ease);
+  line-height: 0;
+}
+.header__ig:hover { color: var(--bronze); }
+
 @media (min-width: 700px) {
   .header__cta { display: inline-block; }
 }
@@ -687,7 +696,8 @@ h3, .h3 {
 
 .hero--overlay .hero__statement {
   color: var(--bone);
-  font-size: clamp(2.25rem, 6vw, 5rem);
+  font-size: clamp(1.875rem, 4.5vw, 3.875rem);
+  margin-bottom: clamp(1rem, 1.75vw, 1.5rem);
   text-shadow: 0 2px 24px rgba(15, 20, 17, 0.5);
 }
 
@@ -1020,6 +1030,7 @@ h3, .h3 {
   font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.15;
+  min-height: calc(2 * 1.15em);
 }
 
 .bucket__price {
@@ -1028,6 +1039,7 @@ h3, .h3 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--moss);
+  min-height: 1.4em;
 }
 
 .bucket__body {
