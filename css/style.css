@@ -1065,12 +1065,13 @@ h3, .h3 {
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.member { display: block; }
+.member { display: block; text-align: center; }
 
 .member__photo {
-  margin-bottom: 1.25rem;
+  margin: 0 auto 1.25rem;
   aspect-ratio: 1 / 1;
   max-width: 320px;
+  width: 100%;
   background: var(--stone);
   overflow: hidden;
   position: relative;
@@ -1160,7 +1161,8 @@ h3, .h3 {
 }
 
 .member__bio {
-  margin-top: 0.875rem;
+  margin: 0.875rem auto 0;
+  max-width: 38ch;
   font-family: var(--serif);
   font-size: 0.9375rem;
   line-height: 1.55;
