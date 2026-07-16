@@ -97,8 +97,27 @@
 
 [[redirects]]
   from = "/about-anomaly"
-  to = "/about.html"
+  to = "/about#focus"
   status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-ashley"
+  to = "/about#team"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-jillee"
+  to = "/about#team"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-paige"
+  to = "/about#team"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/about-jess"
@@ -143,9 +162,52 @@
   force = true
 
 [[redirects]]
+  from = "/specialties"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/relationship-therapy-nashville"
+  to = "/services#relationship"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/relational-therapy-nashville"
+  to = "/services#relationship"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/therapy-anxiety-nashville"
+  to = "/services#anxiety"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/perinatal-postpartum-therapy-nashville"
+  to = "/services#perinatal"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/career"
+  to = "/careers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/anomaly-media"
+  to = "/media"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/welcome"
   to = "/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/book"

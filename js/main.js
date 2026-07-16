@@ -38,7 +38,7 @@
   }
 
   /* ---------- Accessible care popup ----------
-     - Appears 9s after page load OR when user scrolls 40% down (whichever first)
+     - Appears 3s after page load OR when user scrolls 40% down (whichever first)
      - Dismissible; remembers dismissal for 7 days via localStorage
      - Hidden on Contact page so it doesn't compete with the main CTAs */
   const popup = document.querySelector('.popup');
@@ -67,7 +67,7 @@
       };
 
       // Time-based trigger
-      setTimeout(open, 9000);
+      setTimeout(open, 3000);
 
       // Scroll-based trigger
       const onScroll = () => {
