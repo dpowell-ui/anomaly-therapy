@@ -86,8 +86,9 @@
 # Legacy Squarespace path redirects — preserve link equity
 [[redirects]]
   from = "/our-team"
-  to = "/about.html"
+  to = "/about#team"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/team"
@@ -98,6 +99,48 @@
   from = "/about-anomaly"
   to = "/about.html"
   status = 301
+
+[[redirects]]
+  from = "/about-jess"
+  to = "/about#team"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-cayce"
+  to = "/about#team"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-ann"
+  to = "/about#team"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trauma-therapy-nashville"
+  to = "/services#trauma"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/individualtherapy"
+  to = "/services#talk-therapy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workplace-wellness-nashville"
+  to = "/services#workplace"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faqs-therapy-nashville"
+  to = "/faqs"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/welcome"
