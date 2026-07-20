@@ -83,6 +83,11 @@
   to = "/careers.html"
   status = 200
 
+[[redirects]]
+  from = "/chattanooga"
+  to = "/chattanooga.html"
+  status = 200
+
 # Legacy Squarespace path redirects — preserve link equity
 [[redirects]]
   from = "/our-team"
