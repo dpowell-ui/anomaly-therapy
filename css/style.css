@@ -731,6 +731,19 @@ h3, .h3 {
   color: var(--bronze);
 }
 
+/* Chattanooga page hero variant — desaturated photo, olive+graphite overlays */
+.hero--chatt .hero__bg {
+  filter: saturate(0.5);
+  object-position: center center;
+}
+
+.hero--chatt::after {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%),
+    linear-gradient(rgba(79,87,75,0.12), rgba(79,87,75,0.12)),
+    rgba(42,42,42,0.5);
+}
+
 .hero__caption {
   position: relative;
   z-index: 2;
@@ -1551,6 +1564,67 @@ h3, .h3 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(245, 241, 234, 0.5);
+}
+
+.footer__newsletter {
+  padding-block: clamp(2.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid rgba(245, 241, 234, 0.15);
+}
+
+.footer__newsletter-inner {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+@media (min-width: 880px) {
+  .footer__newsletter-inner { grid-template-columns: 1fr 1.8fr; }
+}
+
+.footer__newsletter-heading {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 300;
+  color: var(--bone);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-top: 0.5rem;
+}
+
+.footer__newsletter-body {
+  font-size: 0.875rem;
+  color: rgba(245, 241, 234, 0.65);
+  margin-top: 0.75rem;
+  max-width: 44ch;
+  line-height: 1.6;
+}
+
+/* app-form overrides when rendered inside the dark footer */
+.footer .app-form input[type="text"],
+.footer .app-form input[type="email"] {
+  background: rgba(245, 241, 234, 0.07);
+  border-color: rgba(245, 241, 234, 0.22);
+  color: var(--bone);
+}
+
+.footer .app-form input[type="text"]:focus,
+.footer .app-form input[type="email"]:focus {
+  border-color: rgba(245, 241, 234, 0.6);
+  outline: none;
+}
+
+.footer .app-form input::placeholder { color: rgba(245, 241, 234, 0.38); }
+
+.footer .app-form .app-form__label { color: rgba(245, 241, 234, 0.72); }
+
+.footer .app-form .btn {
+  background: var(--bone);
+  color: var(--graphite);
+  border-color: var(--bone);
+}
+
+.footer .app-form .btn:hover {
+  background: transparent;
+  color: var(--bone);
 }
 
 /* ---------- 16 · FLOATING CTA ---------- */

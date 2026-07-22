@@ -233,6 +233,34 @@
           </ul>
         </div>
       </div>
+      <div class="footer__newsletter">
+        <div class="footer__newsletter-inner">
+          <div>
+            <p class="footer__col-title">Newsletter</p>
+            <p class="footer__newsletter-heading">Stay close to the work.</p>
+            <p class="footer__newsletter-body">Occasional notes from Anomaly on regulation, relationships, and the weight of a high performing life. Thoughtful, infrequent, and yours to leave anytime.</p>
+          </div>
+          <form name="newsletter" method="POST" data-netlify="true" action="/thank-you" class="app-form">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p hidden><label>Don't fill this: <input name="bot-field" /></label></p>
+            <div class="app-form__row">
+              <label class="app-form__field">
+                <span class="app-form__label">First Name</span>
+                <input type="text" name="first_name" required />
+              </label>
+              <label class="app-form__field">
+                <span class="app-form__label">Last Name</span>
+                <input type="text" name="last_name" required />
+              </label>
+            </div>
+            <label class="app-form__field">
+              <span class="app-form__label">Email</span>
+              <input type="email" name="email" required />
+            </label>
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
       <div class="footer__bottom">
         <p class="footer__wordmark">Anomaly</p>
         <p class="footer__legal">© Anomaly Therapy</p>
