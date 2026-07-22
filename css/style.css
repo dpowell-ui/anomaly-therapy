@@ -732,6 +732,10 @@ h3, .h3 {
 }
 
 /* Chattanooga page hero variant — desaturated photo, olive+graphite overlays */
+.hero--chatt {
+  min-height: clamp(460px, 60vh, 680px);
+}
+
 .hero--chatt .hero__bg {
   filter: saturate(0.5);
   object-position: center center;
