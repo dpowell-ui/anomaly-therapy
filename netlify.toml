@@ -93,6 +93,11 @@
   to = "/jess-mansell.html"
   status = 200
 
+[[redirects]]
+  from = "/jillee-walter"
+  to = "/jillee-walter.html"
+  status = 200
+
 # Legacy Squarespace path redirects — preserve link equity
 [[redirects]]
   from = "/our-team"
@@ -119,7 +124,7 @@
 
 [[redirects]]
   from = "/about-jillee"
-  to = "/about#team"
+  to = "/jillee-walter"
   status = 301
   force = true
 
