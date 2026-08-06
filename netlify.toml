@@ -98,6 +98,11 @@
   to = "/jillee-walter.html"
   status = 200
 
+[[redirects]]
+  from = "/elena-godbout"
+  to = "/elena-godbout.html"
+  status = 200
+
 # Legacy Squarespace path redirects — preserve link equity
 [[redirects]]
   from = "/our-team"

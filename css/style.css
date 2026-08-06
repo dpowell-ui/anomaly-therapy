@@ -2195,3 +2195,23 @@ h3, .h3 {
 .bio-credentials__divider {
   color: var(--stone);
 }
+
+/* Optional label + description pairing, for pages whose credential strip
+   needs more than a bare word (e.g. "Strengths Based / Everyone holds
+   inherent strengths") */
+.bio-credentials__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bio-credentials__sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--moss);
+}
