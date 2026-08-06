@@ -136,6 +136,53 @@
     card.addEventListener('focusout', reset);
   });
 
+  /* ---------- Horizontal photo slider ----------
+     Touch swipe and keyboard scrolling work natively (overflow-x + a
+     focusable, tabindex'd track). This wires up click-and-drag for mouse
+     users and the prev/next buttons. */
+  document.querySelectorAll('.bio-slider-wrap').forEach((wrap) => {
+    const slider = wrap.querySelector('.bio-slider');
+    if (!slider) return;
+
+    let isDown = false;
+    let dragged = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      dragged = false;
+      startX = e.pageX;
+      startScroll = slider.scrollLeft;
+      slider.classList.add('is-dragging');
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isDown) return;
+      isDown = false;
+      slider.classList.remove('is-dragging');
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) dragged = true;
+      slider.scrollLeft = startScroll - dx;
+    });
+
+    // Swallow the click that follows a real drag so it doesn't feel janky
+    slider.addEventListener('click', (e) => {
+      if (dragged) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+
+    wrap.querySelectorAll('.bio-slider__nav').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const dir = btn.classList.contains('bio-slider__nav--prev') ? -1 : 1;
+        slider.scrollBy({ left: slider.clientWidth * 0.8 * dir, behavior: 'smooth' });
+      });
+    });
+  });
+
   /* ---------- Mark current nav ---------- */
   const path = window.location.pathname.replace(/\/$/, '') || '/';
   document.querySelectorAll('[data-nav-path]').forEach((a) => {

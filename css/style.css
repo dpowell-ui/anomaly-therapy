@@ -2049,6 +2049,108 @@ h3, .h3 {
   aspect-ratio: 21 / 9;
 }
 
+/* Life gallery — horizontal slider variant.
+   A single scrolling row of smaller tiles instead of a stacked grid.
+   A partial tile is left peeking at the right edge (by design — total
+   tile width always exceeds the container) as the cue that more photos
+   exist. Swipe on touch, wheel/trackpad scroll or click-drag on desktop,
+   arrow keys when the track is focused, plus prev/next buttons. */
+.bio-slider-wrap {
+  position: relative;
+}
+
+.bio-slider {
+  display: flex;
+  gap: clamp(0.5rem, 1.5vw, 0.875rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) transparent;
+}
+
+.bio-slider.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.bio-slider::-webkit-scrollbar { height: 6px; }
+.bio-slider::-webkit-scrollbar-track { background: transparent; }
+.bio-slider::-webkit-scrollbar-thumb { background: var(--stone); border-radius: 999px; }
+
+.bio-slider:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 4px;
+}
+
+.bio-slider__item {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: var(--stone);
+  height: clamp(96px, 20vw, 220px);
+  aspect-ratio: 3 / 4;
+  scroll-snap-align: start;
+}
+
+.bio-slider__item--wide { aspect-ratio: 21 / 9; }
+
+.bio-slider__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-user-drag: none;
+}
+
+.bio-slider__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2.5rem, 10vw, 3.5rem);
+  background: linear-gradient(90deg, var(--stone-soft) 0%, rgba(232, 225, 214, 0) 100%);
+  pointer-events: auto;
+}
+
+/* Always visible, on every breakpoint — a fixed edge cue that "more
+   photos exist" and works regardless of whether a tile happens to peek
+   by a visible number of pixels at a given viewport width. The icon sits
+   in its own solid badge so it reads clearly over any photo. */
+.bio-slider__nav--prev { left: 0; }
+.bio-slider__nav--next { right: 0; transform: scaleX(-1); }
+
+.bio-slider__nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: var(--bone);
+  border: 1px solid rgba(42, 42, 42, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--graphite);
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease);
+}
+
+.bio-slider__nav:hover .bio-slider__nav-icon { color: var(--bronze); }
+
+.bio-slider__nav:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 2px;
+}
+
 /* Specialty tags */
 .bio-tags {
   display: flex;
