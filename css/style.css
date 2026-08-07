@@ -1078,8 +1078,8 @@ h3, .h3 {
   gap: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
 }
 
-@media (min-width: 720px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 880px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .member { display: block; text-align: center; }
@@ -2089,17 +2089,23 @@ h3, .h3 {
   outline-offset: 4px;
 }
 
+/* flex-grow lets tiles stretch to fill the row when there's spare width
+   (e.g. a smaller photo set with no wide tile); flex-shrink:0 keeps them
+   from shrinking below their natural size once the row has more content
+   than fits, which is what makes it scroll instead of cramming down. */
 .bio-slider__item {
   position: relative;
-  flex: 0 0 auto;
+  flex: 1 0 clamp(72px, 15vw, 165px);
   overflow: hidden;
   background: var(--stone);
-  height: clamp(96px, 20vw, 220px);
   aspect-ratio: 3 / 4;
   scroll-snap-align: start;
 }
 
-.bio-slider__item--wide { aspect-ratio: 21 / 9; }
+.bio-slider__item--wide {
+  aspect-ratio: 21 / 9;
+  flex-basis: clamp(224px, 46.7vw, 513px);
+}
 
 .bio-slider__item img {
   width: 100%;
