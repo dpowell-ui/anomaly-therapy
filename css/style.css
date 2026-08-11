@@ -1130,6 +1130,45 @@ h3, .h3 {
   font-weight: 400;
   letter-spacing: -0.005em;
   margin-bottom: 0.25rem;
+  transition: color var(--fast) var(--ease);
+}
+
+.member:hover .member__name,
+.member:focus-visible .member__name {
+  color: var(--bronze);
+}
+
+/* "View profile" hover/focus cue — the click affordance for cards */
+.member__cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.875rem;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.member:hover .member__cue,
+.member:focus-visible .member__cue {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.member__cue-arrow {
+  display: inline-block;
+  transition: transform var(--fast) var(--ease);
+}
+
+.member:hover .member__cue-arrow,
+.member:focus-visible .member__cue-arrow {
+  transform: translateX(3px);
 }
 
 .member__credentials {
@@ -2105,6 +2144,18 @@ h3, .h3 {
 .bio-slider__item--wide {
   aspect-ratio: 21 / 9;
   flex-basis: clamp(224px, 46.7vw, 513px);
+}
+
+/* Fixed-size variant: for photo sets too small to fill a row without
+   individual tiles ballooning past the size used elsewhere. Tiles stay
+   capped at the same size as a full row (flex:0 0 auto, explicit height)
+   and left-align instead of stretching to fill. (justify-content:center
+   was tried here first, but on an overflowing flex row it strands the
+   first tile off-screen to the left with no way to scroll back to it —
+   confirmed by testing narrow widths — so left-align it is.) */
+.bio-slider--fixed .bio-slider__item {
+  flex: 0 0 auto;
+  height: clamp(96px, 20vw, 220px);
 }
 
 .bio-slider__item img {
