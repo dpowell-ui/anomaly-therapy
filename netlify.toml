@@ -47,6 +47,106 @@
   [headers.values]
     Cache-Control = "public, max-age=300, must-revalidate"
 
+# ---------------------------------------------------------------------------
+# Host canonicalization — www → apex, 301, all paths including root.
+# Netlify's primary-domain setting already enforces this in production; this
+# rule codifies it in the repo so the behavior survives a domain reconfigure.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "https://www.anomalytherapy.com/*"
+  to = "https://anomalytherapy.com/:splat"
+  status = 301
+  force = true
+
+# ---------------------------------------------------------------------------
+# Canonical URL enforcement — .html twins 301 to their pretty URL so only one
+# indexable version of each page exists. These must precede the pretty-URL
+# rewrites below. 404.html is intentionally omitted (it is the error document).
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services.html"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faqs.html"
+  to = "/faqs"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/media.html"
+  to = "/media"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/careers.html"
+  to = "/careers"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/chattanooga.html"
+  to = "/chattanooga"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jess-mansell.html"
+  to = "/jess-mansell"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jillee-walter.html"
+  to = "/jillee-walter"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/elena-godbout.html"
+  to = "/elena-godbout"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cayce-smith.html"
+  to = "/cayce-smith"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ann-hatcher.html"
+  to = "/ann-hatcher"
+  status = 301
+  force = true
+
 # Pretty-URL redirects (so /services works as well as /services.html)
 [[redirects]]
   from = "/services"

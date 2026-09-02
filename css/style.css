@@ -1291,6 +1291,19 @@ h3, .h3 {
 
 .faq summary::-webkit-details-marker { display: none; }
 
+/* Questions are real h3 headings for document outline / rich results.
+   The heading inherits summary's typography so nothing shifts visually. */
+.faq summary h3 {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-transform: none;
+}
+
 .faq summary::after {
   content: "+";
   font-family: var(--serif);
