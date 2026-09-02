@@ -112,6 +112,12 @@
   force = true
 
 [[redirects]]
+  from = "/emdr-therapy-nashville.html"
+  to = "/emdr-therapy-nashville"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/thank-you.html"
   to = "/thank-you"
   status = 301
@@ -186,6 +192,11 @@
 [[redirects]]
   from = "/chattanooga"
   to = "/chattanooga.html"
+  status = 200
+
+[[redirects]]
+  from = "/emdr-therapy-nashville"
+  to = "/emdr-therapy-nashville.html"
   status = 200
 
 [[redirects]]
