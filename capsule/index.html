@@ -30,6 +30,7 @@ a{color:inherit}
 
 header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:28px;border-bottom:1px solid var(--rule)}
 .wordmark{font-family:var(--display);letter-spacing:.32em;font-size:.95rem;text-transform:uppercase;white-space:nowrap}
+a.wordmark{text-decoration:none}
 .top small{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
 
 section{padding-block:clamp(56px,9vw,104px)}
@@ -131,7 +132,7 @@ footer .wordmark{font-size:.75rem;color:var(--fg)}
 
 <div class="wrap">
   <header class="top">
-    <span class="wordmark">Anomaly Therapy</span>
+    <a class="wordmark" href="/">Anomaly Therapy</a>
     <small>Private Practice Capsule · No. 01</small>
   </header>
 
@@ -270,7 +271,7 @@ footer .wordmark{font-size:.75rem;color:var(--fg)}
 <div class="wrap">
   <footer>
     <span class="wordmark">Anomaly Therapy</span>
-    <span>1916 Patterson St, Suite 202 · Nashville, TN 37203 · anomalytherapy.com</span>
+    <span>1916 Patterson St, Suite 202 · Nashville, TN 37203 · <a href="/">anomalytherapy.com</a></span>
   </footer>
   <p class="disclaimer" style="padding-bottom:40px">This seminar is educational and is not legal, tax or financial advice. Confirm entity, licensure and tax decisions with a qualified Tennessee professional and your licensing board.</p>
 </div>
