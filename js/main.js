@@ -183,6 +183,53 @@
     });
   });
 
+  /* ---------- Footer newsletter → HubSpot ----------
+     Posts first/last name + email to the newsletter form in HubSpot */
+  document.querySelectorAll('.newsletter-form').forEach((form) => {
+    const status = form.querySelector('.newsletter-form__status');
+    const button = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        status.textContent = 'Please add your first name, last name, and a valid email.';
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+      const hutk = document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/);
+      const body = {
+        fields: ['firstname', 'lastname', 'email'].map((name) => ({
+          objectTypeId: '0-1',
+          name,
+          value: String(data.get(name)).trim(),
+        })),
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title,
+          ...(hutk ? { hutk: hutk[1] } : {}),
+        },
+      };
+
+      button.disabled = true;
+      status.textContent = 'Subscribing…';
+      try {
+        const res = await fetch(
+          `https://api.hsforms.com/submissions/v3/integration/submit/${form.dataset.hsPortal}/${form.dataset.hsForm}`,
+          { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+        );
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        form.dataset.state = 'done';
+        status.textContent = 'Thank you — you’re on the list.';
+      } catch {
+        status.textContent = 'Something went wrong. Please try again, or email hello@anomalytherapy.com.';
+        button.disabled = false;
+      }
+    });
+  });
+
   /* ---------- Mark current nav ---------- */
   const path = window.location.pathname.replace(/\/$/, '') || '/';
   document.querySelectorAll('[data-nav-path]').forEach((a) => {

@@ -1660,6 +1660,7 @@ h3, .h3 {
   background: rgba(245, 241, 234, 0.07);
   border-color: rgba(245, 241, 234, 0.22);
   color: var(--bone);
+  padding-inline: 0.875rem;
 }
 
 .footer .app-form input[type="text"]:focus,
@@ -1682,6 +1683,19 @@ h3, .h3 {
   background: transparent;
   color: var(--bone);
 }
+
+.footer .app-form .btn:disabled { opacity: 0.6; cursor: default; }
+
+.newsletter-form__status {
+  font-size: 0.875rem;
+  color: rgba(245, 241, 234, 0.8);
+  margin-top: 1rem;
+  min-height: 1.4em;
+}
+
+.newsletter-form[data-state="done"] .app-form__row,
+.newsletter-form[data-state="done"] .app-form__field,
+.newsletter-form[data-state="done"] .btn { display: none; }
 
 /* ---------- 16 · FLOATING CTA ---------- */
 .float-cta {

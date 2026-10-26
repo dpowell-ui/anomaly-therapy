@@ -341,9 +341,24 @@
             <p class="footer__newsletter-heading">Stay close to the work.</p>
             <p class="footer__newsletter-body">Occasional notes from Anomaly on regulation, relationships, and the weight of a high performing life. Thoughtful, infrequent, and yours to leave anytime.</p>
           </div>
-          <div class="app-form">
-            <div class="hs-form-frame" data-region="na1" data-form-id="8731b405-5ba1-4f7c-9fd7-06a82be54bed" data-portal-id="51756677"></div>
-          </div>
+          <form class="app-form newsletter-form" data-hs-portal="51756677" data-hs-form="6a843016-25a9-4970-8866-ccf6e29cfb7e" novalidate>
+            <div class="app-form__row">
+              <label class="app-form__field">
+                <span class="app-form__label">First Name</span>
+                <input type="text" name="firstname" autocomplete="given-name" required />
+              </label>
+              <label class="app-form__field">
+                <span class="app-form__label">Last Name</span>
+                <input type="text" name="lastname" autocomplete="family-name" required />
+              </label>
+            </div>
+            <label class="app-form__field">
+              <span class="app-form__label">Email</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <button type="submit" class="btn">Subscribe</button>
+            <p class="newsletter-form__status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
       <div class="footer__bottom">
@@ -368,6 +383,5 @@
   </aside>
 
   <script src="/js/main.js"></script>
-  <script src="https://js.hsforms.net/forms/embed/51756677.js" defer></script>
 </body>
 </html>
