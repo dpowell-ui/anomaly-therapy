@@ -360,15 +360,15 @@
   to = "https://anomalytherapy.sessionshealth.com"
   status = 302
 
-# 404 fallback (Netlify default behavior, listed for clarity)
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-
 # Source files for generated pages (e.g. tools/notes) aren't part of the site
 [[redirects]]
   from = "/tools/*"
   to = "/404.html"
   status = 404
   force = true
+
+# 404 fallback (Netlify default behavior, listed for clarity)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
