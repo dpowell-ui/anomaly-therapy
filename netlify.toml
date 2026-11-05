@@ -118,6 +118,12 @@
   force = true
 
 [[redirects]]
+  from = "/therapy-for-musicians-nashville.html"
+  to = "/therapy-for-musicians-nashville"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/thank-you.html"
   to = "/thank-you"
   status = 301
@@ -197,6 +203,11 @@
 [[redirects]]
   from = "/emdr-therapy-nashville"
   to = "/emdr-therapy-nashville.html"
+  status = 200
+
+[[redirects]]
+  from = "/therapy-for-musicians-nashville"
+  to = "/therapy-for-musicians-nashville.html"
   status = 200
 
 [[redirects]]
