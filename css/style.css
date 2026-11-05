@@ -2588,6 +2588,9 @@ h3, .h3 {
 .section--olive .ks-pro-list a { border-bottom: 1px solid var(--bronze); }
 .ks-soft { color: rgba(245, 241, 234, 0.65); font-size: 0.875rem; margin-top: 1.5rem; }
 
+.bullet-list { list-style: disc; }
+.bullet-list li::marker { color: var(--bronze); }
+
 .ks-sel { user-select: all; }
 
 .ks-crisis {
